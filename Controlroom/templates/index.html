@@ -207,7 +207,7 @@ function drawHumidityChart(data) {
 				<button onclick="toggleGAS()">GAS ON/OFF</button>
 		</div></p>
     </div>
-    <!--<h1>Live Streaming with Picamera2</h1>
+    <!--
     <button onclick="startStreaming()">Start Streaming</button>
     <div id="video-container"></div>-->
 
@@ -257,7 +257,7 @@ function drawHumidityChart(data) {
     
     async function toggleGAS() {
         try {
-            const response = await fetch('/toggle_gas', { method: 'POST1' });
+            const response = await fetch('/toggle_gas', { method: 'POST' });
             const result = await response.json();
             if (result.status === 'success') {
                 const gasStatus = document.getElementById('gas-status');
