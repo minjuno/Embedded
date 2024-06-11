@@ -3,7 +3,7 @@ from datetime import datetime
 import time
 from database import connect_to_database, save_data_to_database, fetch_latest_data, fetch_all_data
 from arduino import read_arduino_data, toggle_led, toggle_gas
-from weather import get_weather, set_background_image
+from weather import get_weather
 from camera import gen_frames
 
 app = Flask(__name__)
@@ -53,7 +53,7 @@ def toggle_led_route():
     toggle_led()
     return jsonify({'status': 'success'})
 
-@app.route("/toggle_gas", methods=['POST1'])
+@app.route("/toggle_gas", methods=['POST'])
 def toggle_gas_route():
     toggle_gas()
     return jsonify({'status': 'success'})
